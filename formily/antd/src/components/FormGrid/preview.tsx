@@ -13,6 +13,7 @@ import { createFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'
 import './styles.less'
+import { umiConsole } from '../../common/utils'
 
 type formilyGrid = typeof FormilyGird
 
@@ -26,6 +27,7 @@ export const FormGrid: DnFC<React.ComponentProps<formilyGrid>> & {
     (buf, child) => buf + (child.props?.['x-component-props']?.gridSpan ?? 1),
     0
   )
+  umiConsole.log('FormGrid #30 totalColumns:', totalColumns)
 
   const key = new Date().getTime()
 

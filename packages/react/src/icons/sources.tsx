@@ -1,5 +1,7 @@
 import React from 'react'
 
+export * from './xt/CustomSelectSource'
+
 export const InputSource = (
   <svg viewBox="0 0 1424 1024">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

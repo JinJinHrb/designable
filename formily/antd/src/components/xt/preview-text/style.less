@@ -1,0 +1,13 @@
+@root-entry-name: 'default';
+@import (reference) '~antd/es/style/themes/index.less';
+
+@form-text-prefix-cls: ~'@{ant-prefix}-form-text';
+
+.@{form-text-prefix-cls} {
+  font-weight: 500;
+  font-size: 14px;
+
+  .@{ant-prefix}-tag:last-child {
+    margin-right: 0;
+  }
+}

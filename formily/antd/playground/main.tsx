@@ -64,6 +64,7 @@ import {
   FormCollapse,
   FormLayout,
   FormGrid,
+  CustomSelect,
 } from '../src'
 
 setNpmCDNRegistry('//unpkg.com')
@@ -138,6 +139,7 @@ const App = () => {
                 Upload,
                 Switch,
                 ObjectContainer,
+                CustomSelect,
               ]}
             />
             <ResourceWidget
@@ -204,6 +206,7 @@ const App = () => {
                       FormGrid,
                       FormLayout,
                       ObjectContainer,
+                      CustomSelect,
                     }}
                   />
                 )}

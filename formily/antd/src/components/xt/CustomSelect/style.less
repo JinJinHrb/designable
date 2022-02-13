@@ -1,0 +1,65 @@
+@prefix: ~"customSelect";
+.@{prefix}{
+  &-wrapper {
+    display: flex;
+  }
+  
+  &-dropdownDivider {
+    margin: 10px 0;
+  }
+  
+  &-dropdownExtension {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 10px 5px 10px;
+  }
+  
+  &-inputItem {
+    flex: auto;
+    height: 30px;
+  }
+  
+  &-optionItem {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &-optionLabelItem {
+    padding: 0;
+  }
+  
+  &-colorPaletteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
+    margin-left: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    cursor: pointer;
+  }
+  
+  &-addItemButton {
+    width: 80px;
+    height: 30px;
+    margin-left: 15px;
+    padding-top: 5px;
+    cursor: 'pointer';
+  }
+  
+  &-colorPalette {
+    display: flex;
+    justify-content: space-around;
+    & > div {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    & > div:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+  
+}

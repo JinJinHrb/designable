@@ -92,6 +92,7 @@ import {
   ArrayTable,
   ArrayCards,
 } from '@formily/antd'
+import { CustomSelect } from '../../src/components/CustomSelect'
 import { Card, Slider, Rate } from 'antd'
 
 const Text: React.FC<{
@@ -134,6 +135,7 @@ const SchemaField = createSchemaField({
     Card,
     Slider,
     Rate,
+    CustomSelect,
   },
 })
 
