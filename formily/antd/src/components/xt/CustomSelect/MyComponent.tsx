@@ -164,7 +164,7 @@ class MyComponent extends React.PureComponent<IProps, IState> {
       !_.isEmpty(propsValue)
     ) {
       let arr = [] as string[]
-      Object.entries(propsValue).forEach(([key, value]) => {
+      Object.entries(propsValue).forEach(([, value]) => {
         arr.push(value)
       })
       nextState.value = arr
