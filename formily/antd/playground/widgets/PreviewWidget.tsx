@@ -29,7 +29,7 @@ import {
   ArrayTable,
   ArrayCards,
 } from '@formily/antd'
-import { CustomSelect } from '../../src/components/CustomSelect'
+import CustomSelect from 'xt-design/es/FormilyCustomSelect'
 import { Card, Slider, Rate } from 'antd'
 import { TreeNode } from '@designable/core'
 import { transformToSchema } from '@designable/formily-transformer'

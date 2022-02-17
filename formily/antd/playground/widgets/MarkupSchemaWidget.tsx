@@ -92,7 +92,7 @@ import {
   ArrayTable,
   ArrayCards,
 } from '@formily/antd'
-import { CustomSelect } from '../../src/components/CustomSelect'
+import CustomSelect from 'xt-design/es/FormilyCustomSelect'
 import { Card, Slider, Rate } from 'antd'
 
 const Text: React.FC<{
