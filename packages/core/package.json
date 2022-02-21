@@ -25,7 +25,8 @@
   "devDependencies": {
     "@formily/json-schema": "^2.0.2",
     "@formily/path": "^2.0.2",
-    "@formily/reactive": "^2.0.2"
+    "@formily/reactive": "^2.0.2",
+    "@types/lodash": "^4.14.178"
   },
   "peerDependencies": {
     "@formily/json-schema": "^2.0.2",

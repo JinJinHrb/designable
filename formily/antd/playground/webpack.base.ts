@@ -1,3 +1,4 @@
+// import '../public-path'
 import path from 'path'
 import fs from 'fs-extra'
 import { GlobSync } from 'glob'
@@ -31,12 +32,21 @@ export default {
     entrypoints: false,
     children: false,
   },
-  entry: {
-    playground: path.resolve(__dirname, './main'),
-  },
+  // entry: {
+  //   playground: path.resolve(__dirname, './main'),
+  // },
+  entry: './playground/index.tsx',
   output: {
+    publicPath: `/designable`,
     path: path.resolve(__dirname, '../build'),
     filename: '[name].[hash].bundle.js',
+
+    // path: resolve('static'),
+    // chunkFilename: ifProduction(`scripts/[name].chunk_${JOIN_STR}.[hash].js`, `scripts/[name].chunk_${JOIN_STR}.js`),
+    // publicPath: ifProduction(`${CDN_URL}/`, '/'),
+    // library: `${pkgName}`,
+    // libraryTarget: 'umd',
+    // jsonpFunction: `webpackJsonp_${pkgName}`,
   },
   resolve: {
     modules: ['node_modules'],

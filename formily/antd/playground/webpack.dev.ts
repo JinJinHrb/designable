@@ -5,10 +5,11 @@ import MonacoPlugin from 'monaco-editor-webpack-plugin'
 //import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import webpack from 'webpack'
 import path from 'path'
+import _ from 'lodash'
 
-const PORT = 3000
+const PORT = 3018
 
-const createPages = (pages) => {
+/* const createPages = (pages) => {
   return pages.map(({ filename, template, chunk }) => {
     return new HtmlWebpackPlugin({
       filename,
@@ -17,14 +18,26 @@ const createPages = (pages) => {
       chunks: chunk,
     })
   })
-}
+} */
 
-for (const key in baseConfig.entry) {
-  if (Array.isArray(baseConfig.entry[key])) {
-    baseConfig.entry[key].push(
-      require.resolve('webpack/hot/dev-server'),
-      `${require.resolve('webpack-dev-server/client')}?http://localhost:${PORT}`
-    )
+if (_.isString(baseConfig.entry)) {
+  const baseConfigEntryArray = [baseConfig.entry as string]
+  baseConfigEntryArray.push(
+    require.resolve('webpack/hot/dev-server'),
+    `${require.resolve('webpack-dev-server/client')}?http://localhost:${PORT}`
+  )
+  baseConfig.entry = baseConfigEntryArray as any
+} else if (_.isObject(baseConfig.entry)) {
+  const baseConfigEntryObject = baseConfig.entry as any
+  for (const key in baseConfigEntryObject) {
+    if (Array.isArray(baseConfig.entry[key])) {
+      ;(baseConfig.entry[key] as string[]).push(
+        require.resolve('webpack/hot/dev-server'),
+        `${require.resolve(
+          'webpack-dev-server/client'
+        )}?http://localhost:${PORT}`
+      )
+    }
   }
 }
 
@@ -35,13 +48,18 @@ export default {
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
     }),
-    ...createPages([
+    /* ...createPages([
       {
         filename: 'index.html',
         template: path.resolve(__dirname, './template.ejs'),
         chunk: ['playground'],
       },
-    ]),
+    ]), */
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      minify: { collapseWhitespace: true },
+      template: path.resolve(__dirname, './template.ejs'),
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new MonacoPlugin({
       languages: ['json'],
@@ -51,6 +69,7 @@ export default {
   devServer: {
     host: '127.0.0.1',
     open: true,
+    openPage: 'designable',
     port: PORT,
   },
 }

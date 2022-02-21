@@ -96,7 +96,7 @@ GlobalRegistry.registerDesignerLocales({
   },
 })
 
-const App = () => {
+export const App = () => {
   const engine = useMemo(
     () =>
       createDesigner({
@@ -232,5 +232,6 @@ const App = () => {
     </Designer>
   )
 }
-
-ReactDOM.render(<App />, document.getElementById('root'))
+if (window && !window.__POWERED_BY_QIANKUN__) {
+  ReactDOM.render(<App />, document.getElementById('root'))
+}

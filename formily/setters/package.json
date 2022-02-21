@@ -27,6 +27,7 @@
     "@formily/core": "^2.0.2",
     "@formily/react": "^2.0.2",
     "@formily/shared": "^2.0.2",
+    "@types/lodash": "^4.14.178",
     "antd": "^4.0.0"
   },
   "peerDependencies": {
