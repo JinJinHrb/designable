@@ -40,7 +40,7 @@ export default {
   entry: './playground/index.tsx',
   output: {
     globalObject: 'window',
-    publicPath: `/designable`,
+    publicPath: `/`,
     path: path.resolve(__dirname, '../build'),
     filename: `js/${pkgName}-[name].js`,
     library: `${pkgName}`,
