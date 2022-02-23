@@ -28,3 +28,4 @@ doc-site
 .lerna-changelog
 formily/antd/.yalc/*
 yalc.lock
+.yalc*
