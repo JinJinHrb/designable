@@ -20,9 +20,9 @@ const PORT = 3018
   })
 } */
 
-if (_.isString(baseConfig.entry)) {
+/* if (_.isString(baseConfig.entry)) {
   const baseConfigEntryArray = [baseConfig.entry as string]
-  baseConfigEntryArray.push(
+  baseConfigEntryArray.unshift(
     require.resolve('webpack/hot/dev-server'),
     `${require.resolve('webpack-dev-server/client')}?http://localhost:${PORT}`
   )
@@ -31,7 +31,7 @@ if (_.isString(baseConfig.entry)) {
   const baseConfigEntryObject = baseConfig.entry as any
   for (const key in baseConfigEntryObject) {
     if (Array.isArray(baseConfig.entry[key])) {
-      ;(baseConfig.entry[key] as string[]).push(
+      ;(baseConfig.entry[key] as string[]).unshift(
         require.resolve('webpack/hot/dev-server'),
         `${require.resolve(
           'webpack-dev-server/client'
@@ -39,7 +39,7 @@ if (_.isString(baseConfig.entry)) {
       )
     }
   }
-}
+} */
 
 export default {
   ...baseConfig,
@@ -57,8 +57,8 @@ export default {
     ]), */
     new HtmlWebpackPlugin({
       inject: 'body',
-      minify: { collapseWhitespace: true },
       template: path.resolve(__dirname, './template.ejs'),
+      minify: { collapseWhitespace: true },
     }),
     new webpack.HotModuleReplacementPlugin(),
     new MonacoPlugin({
@@ -71,5 +71,17 @@ export default {
     open: true,
     openPage: 'designable',
     port: PORT,
+
+    // 微服务改造 Start
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+    historyApiFallback: true,
+    liveReload: false,
+    disableHostCheck: true,
+    compress: true,
+    hot: true,
+    watchContentBase: false,
+    // 微服务改造 End
   },
 }
