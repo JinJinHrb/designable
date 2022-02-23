@@ -2,15 +2,15 @@
 import '../public-path'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { App } from './main'
+import App from './main'
 
 function render(props) {
   const { container } = props
   ReactDOM.render(
     <App />,
     container
-      ? container.querySelector('#root')
-      : document.querySelector('#root')
+      ? container.querySelector('#designRoot')
+      : document.querySelector('#designRoot')
   )
 }
 
@@ -31,7 +31,7 @@ export async function unmount(props) {
   const { container } = props
   ReactDOM.unmountComponentAtNode(
     container
-      ? container.querySelector('#root')
-      : document.querySelector('#root')
+      ? container.querySelector('#designRoot')
+      : document.querySelector('#designRoot')
   )
 }

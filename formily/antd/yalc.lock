@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "xt-design": {
-      "signature": "d62022cc90815c9ed4a557a8776451a5",
-      "file": true
-    }
-  }
-}

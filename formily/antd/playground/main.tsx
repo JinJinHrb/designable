@@ -1,6 +1,6 @@
 import 'antd/dist/antd.less'
-import React, { useMemo } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useEffect, useMemo } from 'react'
+// import ReactDOM from 'react-dom'
 import {
   Designer,
   DesignerToolsWidget,
@@ -34,6 +34,7 @@ import {
   PreviewWidget,
   SchemaEditorWidget,
   MarkupSchemaWidget,
+  XtProvider,
 } from './widgets'
 import { saveSchema } from './service'
 import {
@@ -96,7 +97,17 @@ GlobalRegistry.registerDesignerLocales({
   },
 })
 
-export const App = () => {
+const App = () => {
+  useEffect(() => {
+    const targets = document.querySelectorAll(
+      'div[data-qiankun="designable"] .dn-main-panel-container.root'
+    )
+    const target = targets?.[0] as HTMLElement
+    if (target) {
+      target.style.cssText = 'top: 60px'
+    }
+  }, [])
+
   const engine = useMemo(
     () =>
       createDesigner({
@@ -232,6 +243,9 @@ export const App = () => {
     </Designer>
   )
 }
-if (window && !window.__POWERED_BY_QIANKUN__) {
-  ReactDOM.render(<App />, document.getElementById('root'))
-}
+
+export default () => (
+  <XtProvider>
+    <App />
+  </XtProvider>
+)
