@@ -56,7 +56,6 @@ export default {
     react: 'React',
     'react-dom': 'ReactDOM',
     moment: 'moment',
-    antd: 'antd',
   },
   module: {
     rules: [

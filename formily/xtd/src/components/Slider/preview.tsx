@@ -1,5 +1,5 @@
 import React from 'react'
-import { Slider as AntdSlider } from 'antd'
+import AntdSlider from 'antd/es/slider'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
 import { createFieldSchema } from '../Field'

@@ -31,8 +31,8 @@ import {
 } from '@formily/antd'
 import CustomSelect from 'xt-design/es/FormilyCustomSelect'
 import { Card } from 'xt-design/es/Card'
-import { Slider } from 'antd'
-import { Rate } from 'antd'
+import Slider from 'antd/es/slider'
+import Rate from 'antd/es/rate'
 import { TreeNode } from '@designable/core'
 import { transformToSchema } from '@designable/formily-transformer'
 

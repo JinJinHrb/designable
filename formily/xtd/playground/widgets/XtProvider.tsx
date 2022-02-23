@@ -6,7 +6,7 @@
 /* eslint-disable */
 
 import React from 'react'
-import { ConfigProvider as ConfigProvider0 } from 'antd'
+import ConfigProvider0 from 'antd/es/config-provider'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { ConfigProvider as XTConfigProvider0 } from 'xt-design/es/ConfigProvider'
 

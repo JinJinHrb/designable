@@ -1,5 +1,5 @@
 import React from 'react'
-import { Rate as AntdRate } from 'antd'
+import AntdRate from 'antd/es/rate'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
 import { createFieldSchema } from '../Field'

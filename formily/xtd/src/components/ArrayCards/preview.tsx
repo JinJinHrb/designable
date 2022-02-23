@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Card } from 'xt-design/es/Card'
-import { CardProps } from 'antd'
+import { CardProps } from 'antd/es/card'
 import { TreeNode, createResource } from '@designable/core'
 import {
   useTreeNode,

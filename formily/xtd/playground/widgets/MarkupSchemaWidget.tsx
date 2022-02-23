@@ -93,9 +93,9 @@ import {
   ArrayCards,
 } from '@formily/antd'
 import CustomSelect from 'xt-design/es/FormilyCustomSelect'
-import { Card } from 'antd'
-import { Slider } from 'antd'
-import { Rate } from 'antd'
+import { Card } from 'xt-design/es/Card'
+import Slider from 'antd/es/slider'
+import Rate from 'antd/es/rate'
 
 const Text: React.FC<{
   value?: string

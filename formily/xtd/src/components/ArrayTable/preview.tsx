@@ -1,6 +1,6 @@
 import React from 'react'
-import { Table } from 'antd'
-import { TableProps } from 'antd'
+import { Table } from 'xt-design/es/Table'
+import { TableProps } from 'antd/es/table'
 import { TreeNode, createBehavior, createResource } from '@designable/core'
 import {
   useTreeNode,
