@@ -7,7 +7,7 @@ import webpack from 'webpack'
 import path from 'path'
 import _ from 'lodash'
 
-const PORT = 3000
+const PORT = 3018
 
 /* const createPages = (pages) => {
   return pages.map(({ filename, template, chunk }) => {
@@ -69,9 +69,10 @@ export default {
   devServer: {
     host: '127.0.0.1',
     open: true,
+    openPage: 'designable',
     port: PORT,
-
-    // 微服务改造 Start
+    // wangfan
+    // 微服务改造 Start!
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
