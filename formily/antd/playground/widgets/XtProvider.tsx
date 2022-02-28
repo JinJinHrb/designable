@@ -20,8 +20,8 @@ const getPopupContainer = (node: { parentNode: any }) => {
 
 export const XtProvider = ({ children }) => (
   <ConfigProvider locale={zhCN} getPopupContainer={getPopupContainer}>
-    {/* <XTConfigProvider getPopupContainer={getPopupContainer}> */}
-    {children}
-    {/* </XTConfigProvider> */}
+    <XTConfigProvider getPopupContainer={getPopupContainer}>
+      {children}
+    </XTConfigProvider>
   </ConfigProvider>
 )
