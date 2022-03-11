@@ -65,33 +65,35 @@ const transformToMarkupSchemaCode = (tree: TreeNode) => {
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/react'
 import {
-  Form,
-  FormItem,
-  DatePicker,
-  Checkbox,
-  Cascader,
   Editable,
-  Input,
   NumberPicker,
-  Switch,
   Password,
   PreviewText,
-  Radio,
   Reset,
-  Select,
-  Space,
   Submit,
   TimePicker,
   Transfer,
   TreeSelect,
-  Upload,
+} from '@formily/antd'
+import {
+  ArrayTable,
+  ArrayCards,
+  Form,
+  FormItem,
   FormGrid,
   FormLayout,
   FormTab,
   FormCollapse,
-  ArrayTable,
-  ArrayCards,
-} from '@formily/antd'
+  Cascader,
+  Checkbox,
+  DatePicker, 
+  Input,
+  Radio,
+  Select,
+  Space,
+  Switch,
+  Upload,
+} from '@formily/xtd'
 import CustomSelect from 'xt-design/es/FormilyCustomSelect'
 import { Card } from 'xt-design/es/Card'
 import Slider from 'antd/es/slider'

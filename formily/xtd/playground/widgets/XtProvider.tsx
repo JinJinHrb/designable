@@ -9,6 +9,7 @@ import React from 'react'
 import ConfigProvider0 from 'antd/es/config-provider'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { ConfigProvider as XTConfigProvider0 } from 'xt-design/es/ConfigProvider'
+import '@formily/xtd/dist/xtd.css'
 
 const ConfigProvider = ConfigProvider0 as any
 const XTConfigProvider = XTConfigProvider0 as any
