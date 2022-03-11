@@ -1,4 +1,4 @@
-import { Message as message } from 'xt-design/es/message'
+import { Message as message } from 'xt-design/es/Message'
 
 export const loading = async (
   title: React.ReactNode = 'Loading...',

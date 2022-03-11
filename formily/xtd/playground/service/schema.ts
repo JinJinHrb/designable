@@ -3,7 +3,7 @@ import {
   transformToSchema,
   transformToTreeNode,
 } from '@designable/formily-transformer'
-import { Message as message } from 'xt-design/es/message'
+import { Message as message } from 'xt-design/es/Message'
 
 export const saveSchema = (designer: Engine) => {
   localStorage.setItem(
