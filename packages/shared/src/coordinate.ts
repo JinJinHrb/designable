@@ -246,8 +246,8 @@ export function calcRectByStartEndPoint(
       new DOMRect(
         drawStartX,
         drawStartY,
-        Math.abs(endPoint.x - startPoint.x) - scrollX,
-        Math.abs(endPoint.y - startPoint.y) - scrollY
+        Math.abs(endPoint.x - startPoint.x + scrollX),
+        Math.abs(endPoint.y - startPoint.y + scrollY)
       )
     )
   } else if (
@@ -275,9 +275,23 @@ export function calcRectByStartEndPoint(
       new DOMRect(
         drawStartX,
         drawStartY,
-        Math.abs(endPoint.x - startPoint.x) - scrollX,
-        Math.abs(endPoint.y - startPoint.y) - scrollY
+        Math.abs(endPoint.x - startPoint.x + scrollX),
+        Math.abs(endPoint.y - startPoint.y + scrollY)
       )
     )
   }
 }
+
+/**
+ * 计算对齐线
+ * @param rect1
+ * @param rect2
+ */
+export function calcSnapLine(rect1: IRect, rect2: IRect) {}
+
+/**
+ * 计算距离线
+ * @param rect1
+ * @param rect2
+ */
+export function calcDistanceLine(rect1: IRect, rect2: IRect) {}

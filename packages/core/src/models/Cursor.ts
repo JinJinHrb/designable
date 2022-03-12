@@ -9,9 +9,18 @@ export enum CursorStatus {
   DragStop = 'DRAG_STOP',
 }
 
+export enum CursorDragType {
+  Normal = 'NORMAL',
+  Resize = 'RESIZE',
+  Rotate = 'ROTATE',
+  Translate = 'TRANSLATE',
+  Round = 'ROUND',
+}
+
 export enum CursorType {
-  Move = 'MOVE',
+  Normal = 'NORMAL',
   Selection = 'SELECTION',
+  Sketch = 'SKETCH',
 }
 
 export interface ICursorPosition {
@@ -30,11 +39,6 @@ export interface ICursorPosition {
   topClientX?: number
 
   topClientY?: number
-}
-
-export interface IScrollOffset {
-  scrollX?: number
-  scrollY?: number
 }
 
 export interface ICursor {
@@ -60,11 +64,6 @@ const DEFAULT_POSITION = {
   topClientY: 0,
 }
 
-const DEFAULT_SCROLL_OFFSET = {
-  scrollX: 0,
-  scrollY: 0,
-}
-
 const setCursorStyle = (contentWindow: Window, style: string) => {
   const currentRoot = document?.getElementsByTagName?.('html')?.[0]
   const root = contentWindow?.document?.getElementsByTagName('html')?.[0]
@@ -76,10 +75,22 @@ const setCursorStyle = (contentWindow: Window, style: string) => {
   }
 }
 
+const createPositionDelta = (
+  end: ICursorPosition,
+  start: ICursorPosition
+): ICursorPosition => {
+  return Object.keys(end || {}).reduce((buf, key) => {
+    buf[key] = end[key] - start[key]
+    return buf
+  }, {})
+}
+
 export class Cursor {
   engine: Engine
 
-  type: CursorType | string = CursorType.Move
+  type: CursorType | string = CursorType.Normal
+
+  dragType: CursorDragType | string = CursorDragType.Normal
 
   status: CursorStatus = CursorStatus.Normal
 
@@ -87,11 +98,13 @@ export class Cursor {
 
   dragStartPosition: ICursorPosition = DEFAULT_POSITION
 
-  dragStartScrollOffset: IScrollOffset = DEFAULT_SCROLL_OFFSET
-
   dragEndPosition: ICursorPosition = DEFAULT_POSITION
 
-  dragEndScrollOffset: IScrollOffset = DEFAULT_SCROLL_OFFSET
+  dragCurrentDelta: ICursorPosition
+
+  dragStartToCurrentDelta: ICursorPosition
+
+  dragStartToEndDelta: ICursorPosition
 
   view: Window = globalThisPolyfill
 
@@ -103,18 +116,25 @@ export class Cursor {
   makeObservable() {
     define(this, {
       type: observable.ref,
+      dragType: observable.ref,
       status: observable.ref,
       position: observable.ref,
       dragStartPosition: observable.ref,
-      dragStartScrollOffset: observable.ref,
       dragEndPosition: observable.ref,
-      dragEndScrollOffset: observable.ref,
       view: observable.ref,
       setStyle: action,
       setPosition: action,
       setStatus: action,
       setType: action,
     })
+  }
+
+  get dragendDelta() {
+    return createPositionDelta(this.dragStartPosition, this.dragEndPosition)
+  }
+
+  get draggingDelta() {
+    return createPositionDelta(this.dragStartPosition, this.dragEndPosition)
   }
 
   setStatus(status: CursorStatus) {
@@ -125,6 +145,10 @@ export class Cursor {
     this.type = type
   }
 
+  setDragType(type: CursorDragType | string) {
+    this.dragType = type
+  }
+
   setStyle(style: string) {
     this.engine.workbench.eachWorkspace((workspace) => {
       setCursorStyle(workspace.viewport.contentWindow, style)
@@ -132,33 +156,32 @@ export class Cursor {
   }
 
   setPosition(position?: ICursorPosition) {
+    this.dragCurrentDelta = createPositionDelta(this.position, position)
     this.position = {
       ...this.position,
       ...position,
     }
+    this.dragStartToCurrentDelta = createPositionDelta(
+      this.dragStartPosition,
+      this.position
+    )
   }
+
   setDragStartPosition(position?: ICursorPosition) {
     this.dragStartPosition = {
       ...this.dragStartPosition,
       ...position,
     }
   }
+
   setDragEndPosition(position?: ICursorPosition) {
     this.dragEndPosition = {
       ...this.dragEndPosition,
       ...position,
     }
-  }
-  setDragStartScrollOffset(offset?: IScrollOffset) {
-    this.dragStartScrollOffset = {
-      ...this.dragStartScrollOffset,
-      ...offset,
-    }
-  }
-  setDragEndScrollOffset(offset?: IScrollOffset) {
-    this.dragEndScrollOffset = {
-      ...this.dragEndScrollOffset,
-      ...offset,
-    }
+    this.dragStartToEndDelta = createPositionDelta(
+      this.dragStartPosition,
+      this.dragEndPosition
+    )
   }
 }
