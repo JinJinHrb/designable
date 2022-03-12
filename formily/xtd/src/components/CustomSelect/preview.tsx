@@ -1,5 +1,6 @@
 import React from 'react'
-import XtCustomSelect from 'xt-design/es/FormilyCustomSelect'
+// import XtCustomSelect from 'xt-design/es/FormilyCustomSelect'
+import { XtCustomSelect } from '@formily/xtd'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
 import { createFieldSchema } from '../Field'

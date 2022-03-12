@@ -93,8 +93,9 @@ import {
   Space,
   Switch,
   Upload,
+  XtCustomSelect as CustomSelect
 } from '@formily/xtd'
-import CustomSelect from 'xt-design/es/FormilyCustomSelect'
+// import CustomSelect from 'xt-design/es/FormilyCustomSelect'
 import { Card } from 'xt-design/es/Card'
 import Slider from 'antd/es/slider'
 import Rate from 'antd/es/rate'
