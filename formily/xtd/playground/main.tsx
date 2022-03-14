@@ -66,6 +66,7 @@ import {
   FormLayout,
   FormGrid,
   CustomSelect,
+  XtSelectInput,
 } from '../src'
 
 setNpmCDNRegistry('//unpkg.com')
@@ -151,6 +152,7 @@ const App = () => {
                 Switch,
                 ObjectContainer,
                 CustomSelect,
+                XtSelectInput,
               ]}
             />
             <ResourceWidget
@@ -218,6 +220,7 @@ const App = () => {
                       FormLayout,
                       ObjectContainer,
                       CustomSelect,
+                      XtSelectInput,
                     }}
                   />
                 )}

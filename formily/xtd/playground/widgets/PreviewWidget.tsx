@@ -31,6 +31,7 @@ import {
   Switch,
   Upload,
   XtCustomSelect as CustomSelect,
+  XtSelectInput,
 } from '@formily/xtd'
 // import CustomSelect from 'xt-design/es/FormilyCustomSelect'
 import { Card } from 'xt-design/es/Card'
@@ -80,6 +81,7 @@ const SchemaField = createSchemaField({
     Slider,
     Rate,
     CustomSelect,
+    XtSelectInput,
   },
 })
 
