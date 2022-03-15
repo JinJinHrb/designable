@@ -1,6 +1,6 @@
 import 'antd/dist/antd.less'
-import React, { useEffect, useMemo } from 'react'
-// import ReactDOM from 'react-dom'
+import React, { useMemo } from 'react'
+import ReactDOM from 'react-dom'
 import {
   Designer,
   DesignerToolsWidget,
@@ -34,7 +34,6 @@ import {
   PreviewWidget,
   SchemaEditorWidget,
   MarkupSchemaWidget,
-  XtProvider,
 } from './widgets'
 import { saveSchema } from './service'
 import {
@@ -65,7 +64,6 @@ import {
   FormCollapse,
   FormLayout,
   FormGrid,
-  CustomSelect,
 } from '../src'
 
 setNpmCDNRegistry('//unpkg.com')
@@ -98,16 +96,6 @@ GlobalRegistry.registerDesignerLocales({
 })
 
 const App = () => {
-  useEffect(() => {
-    const targets = document.querySelectorAll(
-      'div[data-qiankun="designable"] .dn-main-panel-container.root'
-    )
-    const target = targets?.[0] as HTMLElement
-    if (target) {
-      target.style.cssText = 'top: 60px'
-    }
-  }, [])
-
   const engine = useMemo(
     () =>
       createDesigner({
@@ -150,7 +138,6 @@ const App = () => {
                 Upload,
                 Switch,
                 ObjectContainer,
-                CustomSelect,
               ]}
             />
             <ResourceWidget
@@ -217,7 +204,6 @@ const App = () => {
                       FormGrid,
                       FormLayout,
                       ObjectContainer,
-                      CustomSelect,
                     }}
                   />
                 )}
@@ -244,8 +230,4 @@ const App = () => {
   )
 }
 
-export default () => (
-  <XtProvider>
-    <App />
-  </XtProvider>
-)
+ReactDOM.render(<App />, document.getElementById('root'))

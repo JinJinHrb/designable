@@ -1,11 +1,8 @@
-// import '../public-path'
 import path from 'path'
 import fs from 'fs-extra'
 import { GlobSync } from 'glob'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import autoprefixer from 'autoprefixer'
-const rawdata = fs.readFileSync('./package.json') as unknown as string
-const { name: pkgName } = JSON.parse(rawdata)
 //import { getThemeVariables } from 'antd/dist/theme'
 
 const getWorkspaceAlias = () => {
@@ -34,18 +31,12 @@ export default {
     entrypoints: false,
     children: false,
   },
-  // entry: {
-  //   playground: path.resolve(__dirname, './main'),
-  // },
-  entry: './playground/index.tsx',
+  entry: {
+    playground: path.resolve(__dirname, './main'),
+  },
   output: {
-    globalObject: 'window',
-    publicPath: `/`,
     path: path.resolve(__dirname, '../build'),
-    filename: `js/${pkgName}-[name].js`,
-    library: `${pkgName}`,
-    libraryTarget: 'umd',
-    jsonpFunction: `webpackJsonp_${pkgName}`,
+    filename: '[name].[hash].bundle.js',
   },
   resolve: {
     modules: ['node_modules'],
