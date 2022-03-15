@@ -93,10 +93,10 @@ import {
   Space,
   Switch,
   Upload,
-  XtCustomSelect as CustomSelect,
+  XtCustomSelect,
   XtSelectInput
 } from '@formily/xtd'
-// import CustomSelect from 'xt-design/es/FormilyCustomSelect'
+// import XtCustomSelect from 'xt-design/es/FormilyCustomSelect'
 import { Card } from 'xt-design/es/Card'
 import Slider from 'antd/es/slider'
 import Rate from 'antd/es/rate'
@@ -141,7 +141,7 @@ const SchemaField = createSchemaField({
     Card,
     Slider,
     Rate,
-    CustomSelect,
+    XtCustomSelect,
     XtSelectInput
   },
 })

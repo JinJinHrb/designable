@@ -65,7 +65,7 @@ import {
   FormCollapse,
   FormLayout,
   FormGrid,
-  CustomSelect,
+  XtCustomSelect,
   XtSelectInput,
 } from '../src'
 
@@ -151,7 +151,7 @@ const App = () => {
                 Upload,
                 Switch,
                 ObjectContainer,
-                CustomSelect,
+                XtCustomSelect,
                 XtSelectInput,
               ]}
             />
@@ -219,7 +219,7 @@ const App = () => {
                       FormGrid,
                       FormLayout,
                       ObjectContainer,
-                      CustomSelect,
+                      XtCustomSelect,
                       XtSelectInput,
                     }}
                   />

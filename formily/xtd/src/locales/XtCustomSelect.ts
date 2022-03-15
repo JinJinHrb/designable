@@ -1,4 +1,4 @@
-export const CustomSelect = {
+export const XtCustomSelect = {
   'zh-CN': {
     title: 'xt选择框',
     settings: {

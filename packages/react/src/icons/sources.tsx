@@ -1,6 +1,6 @@
 import React from 'react'
 
-export * from './xt/CustomSelectSource'
+export * from './xt/XtCustomSelectSource'
 export * from './xt/XtSelectInputSource'
 
 export const InputSource = (

@@ -1,6 +1,6 @@
 import { ISchema } from '@formily/react'
 
-export const CustomSelect: ISchema = {
+export const XtCustomSelect: ISchema = {
   type: 'object',
   properties: {
     mode: {
