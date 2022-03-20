@@ -24,6 +24,14 @@ export const Card: ISchema & { Addition?: ISchema } = {
         optionType: 'button',
       },
     },
+    yAxisTitle: {
+      type: 'boolean',
+      'x-decorator': 'FormItem',
+      'x-component': 'Switch',
+      'x-component-props': {
+        defaultChecked: false,
+      },
+    },
     bordered: {
       type: 'boolean',
       'x-decorator': 'FormItem',

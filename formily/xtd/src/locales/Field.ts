@@ -30,6 +30,7 @@ export const Field = {
         autoFocus: '自动获取焦点',
         showSearch: '支持搜索',
         notFoundContent: '空状态内容',
+        yAxisTitle: '标题前短竖',
         bordered: '是否有边框',
         placeholder: '占位提示',
         style: {
@@ -138,6 +139,7 @@ export const Field = {
         autoFocus: 'Auto Focus',
         showSearch: 'Show Search',
         notFoundContent: 'Not Found Content',
+        yAxisTitle: 'Vertical Line Title',
         bordered: 'Bordered',
         placeholder: 'Placeholder',
         style: {
@@ -178,6 +180,7 @@ export const Field = {
         fullness: 'Fullness',
         inset: 'Inset',
         shallow: 'Shallow',
+        yAxisTitle: 'Vertical Line Title',
         bordered: 'Bordered',
         size: {
           title: 'Size',
@@ -246,6 +249,7 @@ export const Field = {
         autoFocus: '오토 포커스',
         showSearch: '검색 보기',
         notFoundContent: '값을 찾을 수 없음',
+        yAxisTitle: 'Vertical Line Title',
         bordered: 'Bordered',
         placeholder: 'Placeholder',
         style: {
@@ -286,6 +290,7 @@ export const Field = {
         fullness: 'Fullness',
         inset: 'Inset',
         shallow: '얇게',
+        yAxisTitle: 'Vertical Line Title',
         bordered: 'Bordered',
         size: {
           title: '크기',

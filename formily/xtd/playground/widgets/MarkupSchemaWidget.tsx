@@ -66,7 +66,6 @@ import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/react'
 import {
   Editable,
-  NumberPicker,
   Password,
   PreviewText,
   Reset,
@@ -88,6 +87,7 @@ import {
   Checkbox,
   DatePicker, 
   Input,
+  NumberPicker,
   Radio,
   Select,
   Space,
