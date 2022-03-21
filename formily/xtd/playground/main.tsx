@@ -58,8 +58,9 @@ import {
   Text,
   Card,
   ArrayCards,
-  ObjectContainer,
+  ArrayItems,
   ArrayTable,
+  ObjectContainer,
   Space,
   FormTab,
   FormCollapse,
@@ -168,7 +169,7 @@ const App = () => {
             />
             <ResourceWidget
               title="sources.Arrays"
-              sources={[ArrayCards, ArrayTable]}
+              sources={[ArrayCards, ArrayItems, ArrayTable]}
             />
             <ResourceWidget title="sources.Displays" sources={[Text]} />
           </CompositePanel.Item>
@@ -212,6 +213,7 @@ const App = () => {
                       Text,
                       Card,
                       ArrayCards,
+                      ArrayItems,
                       ArrayTable,
                       Space,
                       FormTab,

@@ -75,8 +75,9 @@ import {
   TreeSelect,
 } from '@formily/antd'
 import {
-  ArrayTable,
   ArrayCards,
+  ArrayItems,
+  ArrayTable,
   Form,
   FormItem,
   FormGrid,
@@ -117,8 +118,9 @@ const SchemaField = createSchemaField({
     FormLayout,
     FormTab,
     FormCollapse,
-    ArrayTable,
     ArrayCards,
+    ArrayItems,
+    ArrayTable,
     FormItem,
     DatePicker,
     Checkbox,
