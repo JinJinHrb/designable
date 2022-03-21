@@ -1,6 +1,6 @@
 export const ArrayItems = {
   'zh-CN': {
-    title: '自增表格',
+    title: '自增元素',
     addSortHandle: '添加排序',
     addColumn: '添加列',
     addIndex: '添加索引',
@@ -21,7 +21,7 @@ export const ArrayItems = {
     },
   },
   'en-US': {
-    title: 'Array Table',
+    title: 'Array Items',
     addSortHandle: 'Add Sort Handle',
     addColumn: 'Add Column',
     addIndex: 'Add Index',
@@ -42,7 +42,7 @@ export const ArrayItems = {
     },
   },
   'ko-KR': {
-    title: '배열 테이블',
+    title: 'Array Items',
     addSortHandle: '정렬 핸들 추가',
     addColumn: '열 추가',
     addIndex: '색인 추가',

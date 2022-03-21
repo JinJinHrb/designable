@@ -41,7 +41,7 @@ export const XtCustomSelect = {
     },
   },
   'en-US': {
-    title: 'xtSelect',
+    title: 'xtCustomSelect',
     settings: {
       'x-component-props': {
         mode: {

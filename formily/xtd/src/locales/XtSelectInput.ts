@@ -41,7 +41,7 @@ export const XtSelectInput = {
     },
   },
   'en-US': {
-    title: 'xtSelect',
+    title: 'xtSelectInput',
     settings: {
       'x-component-props': {
         mode: {
