@@ -30,3 +30,4 @@ formily/antd/.yalc/*
 yalc.lock
 .yalc*
 preview.tsx.keep
+yarn-error.log
