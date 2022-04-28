@@ -1,6 +1,6 @@
 import { Engine } from './Engine'
 import { action, define, observable } from '@formily/reactive'
-import { globalThisPolyfill } from '@designable/shared'
+import { globalThisPolyfill, isValidNumber } from '@designable/shared'
 
 export enum CursorStatus {
   Normal = 'NORMAL',
@@ -10,9 +10,10 @@ export enum CursorStatus {
 }
 
 export enum CursorDragType {
-  Normal = 'NORMAL',
+  Move = 'MOVE',
   Resize = 'RESIZE',
   Rotate = 'ROTATE',
+  Scale = 'SCALE',
   Translate = 'TRANSLATE',
   Round = 'ROUND',
 }
@@ -75,12 +76,16 @@ const setCursorStyle = (contentWindow: Window, style: string) => {
   }
 }
 
-const createPositionDelta = (
+const calcPositionDelta = (
   end: ICursorPosition,
   start: ICursorPosition
 ): ICursorPosition => {
   return Object.keys(end || {}).reduce((buf, key) => {
-    buf[key] = end[key] - start[key]
+    if (isValidNumber(end?.[key]) && isValidNumber(start?.[key])) {
+      buf[key] = end[key] - start[key]
+    } else {
+      buf[key] = end[key]
+    }
     return buf
   }, {})
 }
@@ -90,21 +95,21 @@ export class Cursor {
 
   type: CursorType | string = CursorType.Normal
 
-  dragType: CursorDragType | string = CursorDragType.Normal
+  dragType: CursorDragType | string = CursorDragType.Move
 
   status: CursorStatus = CursorStatus.Normal
 
   position: ICursorPosition = DEFAULT_POSITION
 
-  dragStartPosition: ICursorPosition = DEFAULT_POSITION
+  dragStartPosition: ICursorPosition
 
-  dragEndPosition: ICursorPosition = DEFAULT_POSITION
+  dragEndPosition: ICursorPosition
 
-  dragCurrentDelta: ICursorPosition
+  dragAtomDelta: ICursorPosition = DEFAULT_POSITION
 
-  dragStartToCurrentDelta: ICursorPosition
+  dragStartToCurrentDelta: ICursorPosition = DEFAULT_POSITION
 
-  dragStartToEndDelta: ICursorPosition
+  dragStartToEndDelta: ICursorPosition = DEFAULT_POSITION
 
   view: Window = globalThisPolyfill
 
@@ -121,6 +126,9 @@ export class Cursor {
       position: observable.ref,
       dragStartPosition: observable.ref,
       dragEndPosition: observable.ref,
+      dragAtomDelta: observable.ref,
+      dragStartToCurrentDelta: observable.ref,
+      dragStartToEndDelta: observable.ref,
       view: observable.ref,
       setStyle: action,
       setPosition: action,
@@ -129,12 +137,11 @@ export class Cursor {
     })
   }
 
-  get dragendDelta() {
-    return createPositionDelta(this.dragStartPosition, this.dragEndPosition)
-  }
-
-  get draggingDelta() {
-    return createPositionDelta(this.dragStartPosition, this.dragEndPosition)
+  get speed() {
+    return Math.sqrt(
+      Math.pow(this.dragAtomDelta.clientX, 2) +
+        Math.pow(this.dragAtomDelta.clientY, 2)
+    )
   }
 
   setStatus(status: CursorStatus) {
@@ -156,32 +163,36 @@ export class Cursor {
   }
 
   setPosition(position?: ICursorPosition) {
-    this.dragCurrentDelta = createPositionDelta(this.position, position)
-    this.position = {
-      ...this.position,
-      ...position,
+    this.dragAtomDelta = calcPositionDelta(this.position, position)
+    this.position = { ...position }
+    if (this.status === CursorStatus.Dragging) {
+      this.dragStartToCurrentDelta = calcPositionDelta(
+        this.position,
+        this.dragStartPosition
+      )
     }
-    this.dragStartToCurrentDelta = createPositionDelta(
-      this.dragStartPosition,
-      this.position
-    )
   }
 
   setDragStartPosition(position?: ICursorPosition) {
-    this.dragStartPosition = {
-      ...this.dragStartPosition,
-      ...position,
+    if (position) {
+      this.dragStartPosition = { ...position }
+    } else {
+      this.dragStartPosition = null
+      this.dragStartToCurrentDelta = DEFAULT_POSITION
     }
   }
 
   setDragEndPosition(position?: ICursorPosition) {
-    this.dragEndPosition = {
-      ...this.dragEndPosition,
-      ...position,
+    if (!this.dragStartPosition) return
+    if (position) {
+      this.dragEndPosition = { ...position }
+      this.dragStartToEndDelta = calcPositionDelta(
+        this.dragStartPosition,
+        this.dragEndPosition
+      )
+    } else {
+      this.dragEndPosition = null
+      this.dragStartToEndDelta = DEFAULT_POSITION
     }
-    this.dragStartToEndDelta = createPositionDelta(
-      this.dragStartPosition,
-      this.dragEndPosition
-    )
   }
 }

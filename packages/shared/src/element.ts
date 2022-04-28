@@ -1,3 +1,5 @@
+import { Point } from './coordinate'
+
 const InlineLayoutTagNames = new Set([
   'A',
   'ABBR',
@@ -73,6 +75,7 @@ export const calcElementOuterWidth = (
 export const calcElementLayout = (element: Element) => {
   if (!element) return 'vertical'
   const parent = element.parentElement
+  if (!parent) return 'vertical'
   const tagName = element.tagName
   const parentTagName = parent.tagName
   const style = getComputedStyle(element)
@@ -104,5 +107,38 @@ export const calcElementLayout = (element: Element) => {
       return 'vertical'
     }
     return 'horizontal'
+  }
+}
+
+export const calcElementTranslate = (element: HTMLElement) => {
+  const transform = element?.style?.transform
+  if (transform) {
+    const [x, y] = transform
+      .match(
+        /translate(?:3d)?\(\s*([-\d.]+)[a-z]+?[\s,]+([-\d.]+)[a-z]+?(?:[\s,]+([-\d.]+))?[a-z]+?\s*\)/
+      )
+      ?.slice(1, 3) ?? [0, 0]
+
+    return new Point(Number(x), Number(y))
+  } else {
+    return new Point(Number(element.offsetLeft), Number(element.offsetTop))
+  }
+}
+
+export const calcElementRotate = (element: HTMLElement) => {
+  const transform = element?.style?.transform
+  if (transform) {
+    return Number(transform.match(/rotate\(\s*([-\d.]+)/)?.[1] ?? 0)
+  } else {
+    return 0
+  }
+}
+
+export const calcElementScale = (element: HTMLElement) => {
+  const transform = element?.style?.transform
+  if (transform) {
+    return Number(transform.match(/scale\(\s*([-\d.]+)/)?.[1] ?? 0)
+  } else {
+    return 0
   }
 }

@@ -13,9 +13,7 @@ dist/
 build/
 coverage/
 node_modules/
-examples/test
 .idea/
-.vscode/
 TODO.md
 tsconfig.tsbuildinfo
 package/
