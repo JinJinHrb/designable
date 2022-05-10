@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch as AntdSwitch } from 'antd'
+import { Switch as AntdSwitch } from 'xt-design/es/Switch'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
 import { createFieldSchema } from '../Field'

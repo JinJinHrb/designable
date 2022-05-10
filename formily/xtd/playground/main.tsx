@@ -1,6 +1,6 @@
 import 'antd/dist/antd.less'
-import React, { useMemo } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useEffect, useMemo } from 'react'
+// import ReactDOM from 'react-dom'
 import {
   Designer,
   DesignerToolsWidget,
@@ -34,6 +34,7 @@ import {
   PreviewWidget,
   SchemaEditorWidget,
   MarkupSchemaWidget,
+  XtProvider,
 } from './widgets'
 import { saveSchema } from './service'
 import {
@@ -57,13 +58,16 @@ import {
   Text,
   Card,
   ArrayCards,
-  ObjectContainer,
+  ArrayItems,
   ArrayTable,
+  ObjectContainer,
   Space,
   FormTab,
   FormCollapse,
   FormLayout,
   FormGrid,
+  XtCustomSelect,
+  XtSelectInput,
 } from '../src'
 
 setNpmCDNRegistry('//unpkg.com')
@@ -96,6 +100,16 @@ GlobalRegistry.registerDesignerLocales({
 })
 
 const App = () => {
+  useEffect(() => {
+    const targets = document.querySelectorAll(
+      'div[data-qiankun="designable"] .dn-main-panel-container.root'
+    )
+    const target = targets?.[0] as HTMLElement
+    if (target) {
+      target.style.cssText = 'top: 60px'
+    }
+  }, [])
+
   const engine = useMemo(
     () =>
       createDesigner({
@@ -138,6 +152,8 @@ const App = () => {
                 Upload,
                 Switch,
                 ObjectContainer,
+                XtCustomSelect,
+                XtSelectInput,
               ]}
             />
             <ResourceWidget
@@ -153,7 +169,7 @@ const App = () => {
             />
             <ResourceWidget
               title="sources.Arrays"
-              sources={[ArrayCards, ArrayTable]}
+              sources={[ArrayCards, ArrayItems, ArrayTable]}
             />
             <ResourceWidget title="sources.Displays" sources={[Text]} />
           </CompositePanel.Item>
@@ -197,6 +213,7 @@ const App = () => {
                       Text,
                       Card,
                       ArrayCards,
+                      ArrayItems,
                       ArrayTable,
                       Space,
                       FormTab,
@@ -204,6 +221,8 @@ const App = () => {
                       FormGrid,
                       FormLayout,
                       ObjectContainer,
+                      XtCustomSelect,
+                      XtSelectInput,
                     }}
                   />
                 )}
@@ -230,4 +249,8 @@ const App = () => {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+export default () => (
+  <XtProvider>
+    <App />
+  </XtProvider>
+)

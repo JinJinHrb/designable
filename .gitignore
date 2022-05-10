@@ -13,7 +13,6 @@ dist/
 build/
 coverage/
 node_modules/
-examples/test
 .idea/
 TODO.md
 tsconfig.tsbuildinfo
@@ -25,3 +24,8 @@ package.zip
 .cjsescache
 doc-site
 .lerna-changelog
+formily/antd/.yalc/*
+yalc.lock
+.yalc*
+preview.tsx.keep
+yarn-error.log

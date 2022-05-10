@@ -2,34 +2,41 @@ import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/react'
 import {
-  Form,
-  FormItem,
-  DatePicker,
-  Checkbox,
-  Cascader,
   Editable,
-  Input,
-  NumberPicker,
-  Switch,
   Password,
   PreviewText,
-  Radio,
   Reset,
-  Select,
-  Space,
   Submit,
   TimePicker,
   Transfer,
   TreeSelect,
-  Upload,
+} from '@formily/antd'
+import {
+  ArrayCards,
+  ArrayItems,
+  ArrayTable,
+  Form,
+  FormItem,
   FormGrid,
   FormLayout,
   FormTab,
   FormCollapse,
-  ArrayTable,
-  ArrayCards,
-} from '@formily/antd'
-import { Card, Slider, Rate } from 'antd'
+  Cascader,
+  Checkbox,
+  DatePicker,
+  Input,
+  NumberPicker,
+  Radio,
+  Select,
+  Space,
+  Switch,
+  Upload,
+  XtCustomSelect,
+  XtSelectInput,
+} from '@formily/xtd'
+import { Card } from 'xt-design/es/Card'
+import Slider from 'antd/es/slider'
+import Rate from 'antd/es/rate'
 import { TreeNode } from '@designable/core'
 import { transformToSchema } from '@designable/formily-transformer'
 
@@ -49,8 +56,9 @@ const SchemaField = createSchemaField({
     FormLayout,
     FormTab,
     FormCollapse,
-    ArrayTable,
     ArrayCards,
+    ArrayItems,
+    ArrayTable,
     FormItem,
     DatePicker,
     Checkbox,
@@ -73,6 +81,8 @@ const SchemaField = createSchemaField({
     Card,
     Slider,
     Rate,
+    XtCustomSelect,
+    XtSelectInput,
   },
 })
 

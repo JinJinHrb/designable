@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch } from 'antd'
+import { Switch } from 'xt-design/es/Switch'
 
 export interface IFormItemSwitcherProps {
   value?: string

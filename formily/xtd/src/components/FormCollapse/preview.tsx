@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { observer } from '@formily/react'
-import { Collapse } from 'antd'
+import { Collapse } from 'xt-design/es/Collapse'
 import { CollapseProps, CollapsePanelProps } from 'antd/lib/collapse'
 import { TreeNode, createBehavior, createResource } from '@designable/core'
 import {

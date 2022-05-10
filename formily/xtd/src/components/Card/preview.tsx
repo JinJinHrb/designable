@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card as AntdCard } from 'antd'
+import { Card as AntdCard } from 'xt-design/es/Card'
 
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'

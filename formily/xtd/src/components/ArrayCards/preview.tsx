@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { Card, CardProps } from 'antd'
+import { Card } from 'xt-design/es/Card'
+import { CardProps } from 'antd/es/card'
 import { TreeNode, createResource } from '@designable/core'
 import {
   useTreeNode,
@@ -8,7 +9,7 @@ import {
   useNodeIdProps,
   DnFC,
 } from '@designable/react'
-import { ArrayBase } from '@formily/antd'
+import { ArrayBase } from '@formily/xtd'
 import { observer } from '@formily/react'
 import { LoadTemplate } from '../../common/LoadTemplate'
 import { useDropTemplate } from '../../hooks'

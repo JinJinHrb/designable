@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
-import { Space, Button, Radio } from 'antd'
+import Space from 'antd/es/space'
+import Radio from 'antd/es/radio'
+import { Button } from 'xt-design/es/Button'
 import { GithubOutlined } from '@ant-design/icons'
 import { useDesigner, TextWidget } from '@designable/react'
 import { GlobalRegistry } from '@designable/core'
