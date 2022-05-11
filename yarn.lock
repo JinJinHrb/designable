@@ -1209,6 +1209,15 @@
     react-sortable-hoc "^1.11.0"
     react-sticky-box "^0.9.3"
 
+"@formily/core@2.0.13":
+  version "2.0.13"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/core/-/core-2.0.13.tgz#6e693438fd47f2287d6ccb473bd2f15e4364ca14"
+  integrity sha512-HEtSTCEsxkavYjMobWeh2CfhXHJ64CokKIyrq2xJdbP6D+cwW8zPRcYspNDrFvar2oCliK1RdrI6VQE8tHGIkA==
+  dependencies:
+    "@formily/reactive" "2.0.13"
+    "@formily/shared" "2.0.13"
+    "@formily/validator" "2.0.13"
+
 "@formily/core@2.0.18", "@formily/core@^2.0.2":
   version "2.0.18"
   resolved "https://registry.yarnpkg.com/@formily/core/-/core-2.0.18.tgz#1fa21a5a3e92fc2b94cf4e49adafb57102fa400b"
@@ -1227,10 +1236,10 @@
     "@formily/shared" "2.0.9"
     "@formily/validator" "2.0.9"
 
-"@formily/grid@2.0.13":
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/@formily/grid/-/grid-2.0.13.tgz#1a983b48c12420e3f599aae33d44b7aca9732937"
-  integrity sha512-/ICM9DYaJS6melpB9jXTR3NJ3QFS00172CoaM3jpw6NY+jK01l7C+atOOFeW3X1qlJuCXDmmW99oXdBfTx0dPw==
+"@formily/grid@2.0.18":
+  version "2.0.18"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/grid/-/grid-2.0.18.tgz#65f628001a0ece52f407341d1f2abb45e0f96150"
+  integrity sha512-41X1ovt7cLXPvDy9gBS6EcB8j9ddLNtPHM0Qrs9ylW2XNKz0lkH5raGzzRPZ5Chr9enR5U5yby+bAMkjQb3dsA==
   dependencies:
     "@formily/reactive" "2.0.18"
     "@juggle/resize-observer" "^3.3.1"
@@ -1247,6 +1256,15 @@
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/@formily/json-schema/-/json-schema-2.0.13.tgz#d0ec9580c9410f73e2651f8c9f1fca322ceef836"
   integrity sha512-BA+qQGD/V/5wA39aVxOIrVgIo8AoQ2wS80b45jx3i+z8+XR3uftBHBNdVd5Ss94pvl0ZOo/fpHwf9D784c2c5A==
+  dependencies:
+    "@formily/core" "2.0.13"
+    "@formily/reactive" "2.0.13"
+    "@formily/shared" "2.0.13"
+
+"@formily/json-schema@2.0.18":
+  version "2.0.18"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/json-schema/-/json-schema-2.0.18.tgz#93561f14a58bf4243a59ba03f0ec74c5e2576597"
+  integrity sha512-ZU7W8Hi670fpCdBJNxx03EjarV8JzvB/AXCMFT2umZkyaCLx0YqxUVDC+/UOigeUVv19H/pA2yLL/rJuoab4+A==
   dependencies:
     "@formily/core" "2.0.18"
     "@formily/reactive" "2.0.18"
@@ -1277,27 +1295,32 @@
     react-sortable-hoc "^1.11.0"
     react-sticky-box "^0.9.3"
 
-"@formily/path@2.0.13", "@formily/path@^2.0.2":
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/@formily/path/-/path-2.0.13.tgz#3caf92bddb3669aac04537c0c03eafbcf5ce8a04"
-  integrity sha512-iFcKUvLsLvZsx4XG83U5u6lqBosnnZuuaova+w7xSeVCTVRQvw9BLu3Q8udhubrfxIWKzLgtRNl5OgdK2PGgMg==
+"@formily/path@2.0.18":
+  version "2.0.18"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/path/-/path-2.0.18.tgz#09e6570a001ca996e86858fddd35e4ea598c728d"
+  integrity sha512-8KkJq9BQPMY6tleQ25BvxMTk0bBdasNwnZWj93w6BXlKMShRkOO3YBCbGxeI3gXQQxws0Q0xX34/fTeccWZVRw==
 
 "@formily/path@2.0.9":
   version "2.0.9"
   resolved "http://registry.xtrfr.cn/repository/npm/@formily/path/-/path-2.0.9.tgz#b1a3da3cecda957e71a12cd7cdb2c84b813b18f6"
   integrity sha512-gToND/PcorDF1bWMLN/hQiRSbMWAp2sSXKWfVkR6kEARUsEMMSULc8JCCQfOIiWRqiEvAGQhK9A6omv0an9PMA==
 
-"@formily/react@2.0.13", "@formily/react@^2.0.2":
+"@formily/path@^2.0.2":
   version "2.0.13"
-  resolved "https://registry.yarnpkg.com/@formily/react/-/react-2.0.13.tgz#66f795126e0bf9d14803eb7a1873a11e66c4f32f"
-  integrity sha512-NPRi90vb4zTDX7NryQHPjuRn4G02UvdvJyEcDrE2V9D0f9PiljhHG3t5GQfk7KTzYi8bK/L9CWRXF9+fkV/vaw==
+  resolved "https://registry.yarnpkg.com/@formily/path/-/path-2.0.13.tgz#3caf92bddb3669aac04537c0c03eafbcf5ce8a04"
+  integrity sha512-iFcKUvLsLvZsx4XG83U5u6lqBosnnZuuaova+w7xSeVCTVRQvw9BLu3Q8udhubrfxIWKzLgtRNl5OgdK2PGgMg==
+
+"@formily/react@2.0.18":
+  version "2.0.18"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/react/-/react-2.0.18.tgz#1c81134ed17b2fb841d054fd46eec349e0c65903"
+  integrity sha512-Y1g48icjQcApd+KIdK4sb1d49RGsItyvV9JzQAANTgULkMi2qYJrB6vTkAkT2yipyIe1GAO9tsgYaEvXDyZCtw==
   dependencies:
-    "@formily/core" "2.0.13"
-    "@formily/json-schema" "2.0.13"
-    "@formily/reactive" "2.0.13"
-    "@formily/reactive-react" "2.0.13"
-    "@formily/shared" "2.0.13"
-    "@formily/validator" "2.0.13"
+    "@formily/core" "2.0.18"
+    "@formily/json-schema" "2.0.18"
+    "@formily/reactive" "2.0.18"
+    "@formily/reactive-react" "2.0.18"
+    "@formily/shared" "2.0.18"
+    "@formily/validator" "2.0.18"
     hoist-non-react-statics "^3.3.2"
 
 "@formily/react@2.0.9":
@@ -1313,10 +1336,31 @@
     "@formily/validator" "2.0.9"
     hoist-non-react-statics "^3.3.2"
 
+"@formily/react@^2.0.2":
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@formily/react/-/react-2.0.13.tgz#66f795126e0bf9d14803eb7a1873a11e66c4f32f"
+  integrity sha512-NPRi90vb4zTDX7NryQHPjuRn4G02UvdvJyEcDrE2V9D0f9PiljhHG3t5GQfk7KTzYi8bK/L9CWRXF9+fkV/vaw==
+  dependencies:
+    "@formily/core" "2.0.13"
+    "@formily/json-schema" "2.0.13"
+    "@formily/reactive" "2.0.13"
+    "@formily/reactive-react" "2.0.13"
+    "@formily/shared" "2.0.13"
+    "@formily/validator" "2.0.13"
+    hoist-non-react-statics "^3.3.2"
+
 "@formily/reactive-react@2.0.13", "@formily/reactive-react@^2.0.2":
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/@formily/reactive-react/-/reactive-react-2.0.13.tgz#3ca7f674f0e750c7df752b2d5175f843f2270c6d"
   integrity sha512-6cQf3tFmMtrPfQle3QeJW8Kp5WRPLaj2HSSpFEHoEDXmw02aQ2qPqqVO7tvzY1iSkhvpqNHODnVkPWP9CAxgyQ==
+  dependencies:
+    "@formily/reactive" "2.0.13"
+    hoist-non-react-statics "^3.3.2"
+
+"@formily/reactive-react@2.0.18":
+  version "2.0.18"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/reactive-react/-/reactive-react-2.0.18.tgz#c7c4e60b16a27581c67692dc8ac0973b5d0f150b"
+  integrity sha512-pbnInraFXMy1+CB+W4SEbjlYQ6cQ43GxMuFmNJD5zbXh6NI2lSgflb/R/1XiXuvwqTfAS0qE+u2xI2C4bTCRrg==
   dependencies:
     "@formily/reactive" "2.0.18"
     hoist-non-react-statics "^3.3.2"
@@ -1334,6 +1378,11 @@
   resolved "https://registry.yarnpkg.com/@formily/reactive/-/reactive-2.0.13.tgz#78817dbc36214493ddf98e29c11623cbbca2a7eb"
   integrity sha512-DxkQ8dYUWE2ZxO8QXIL6nLzgXgopX79iD3fI05bDvilt3esSakOuBAvWF/HcebF4xh17Iwem7OkDZPm04uZ20g==
 
+"@formily/reactive@2.0.18":
+  version "2.0.18"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/reactive/-/reactive-2.0.18.tgz#3d6fc59f813b05c5f0f56c83ad944df6e110141d"
+  integrity sha512-Xy0RZ+Srnnr1q6ApU6SOReOyhOUMWiL00qpUQUO1XclIgWxcxCQVOzPsBQA9S+MPg2B4Ja30ii7/QcEd554CLg==
+
 "@formily/reactive@2.0.9":
   version "2.0.9"
   resolved "http://registry.xtrfr.cn/repository/npm/@formily/reactive/-/reactive-2.0.9.tgz#5dbc4c03e376fe99f88ab404d6f32356665b8cc2"
@@ -1343,6 +1392,19 @@
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/@formily/shared/-/shared-2.0.13.tgz#ac39e548ec1607b31d0bb57ed3564e8e7e85bc02"
   integrity sha512-AdFoxN4+fFGiKNaypSAJt89EEJXqoA2sQGEPbgY5C4bIohVb+Kd0DVSyj4BMjRu2sdzQArMLL1Ttfh3xqvQ3vg==
+  dependencies:
+    "@formily/path" "2.0.13"
+    camel-case "^4.1.1"
+    lower-case "^2.0.1"
+    no-case "^3.0.4"
+    param-case "^3.0.4"
+    pascal-case "^3.1.1"
+    upper-case "^2.0.1"
+
+"@formily/shared@2.0.18":
+  version "2.0.18"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/shared/-/shared-2.0.18.tgz#ebc0b3468dbf7fe6daf168214c238a26f61e2e04"
+  integrity sha512-v+rhavjzSXnMPZX6LpEtpecUBRhw08MrS1peKSNCLX6Kdof8sQq0j13SGNZ2oKuE7F98kDV9j9fllZ6EUGRaKQ==
   dependencies:
     "@formily/path" "2.0.18"
     camel-case "^4.1.1"
@@ -1370,6 +1432,13 @@
   resolved "https://registry.yarnpkg.com/@formily/validator/-/validator-2.0.13.tgz#58b0df2fc8a1d6700cfd896d26ef830881c093cb"
   integrity sha512-pqYLSkyhGUBQSHAe1Q3H3Xa/TjxOVxqU+1wBb54iV7fxD/eeVH/JH5CPld2WsZJpeO1c5KZQCD32rUVNOPPotg==
   dependencies:
+    "@formily/shared" "2.0.13"
+
+"@formily/validator@2.0.18":
+  version "2.0.18"
+  resolved "http://registry.xtrfr.cn/repository/npm/@formily/validator/-/validator-2.0.18.tgz#8fd15547152546b500080d4d1653e0b00ee11980"
+  integrity sha512-G8+w22T8yaojc4Kk9LaIr2sr5YRzm5s9W3rlQYVq/0yIJDmkj1oTCkuGiknnR22Y28REasBVdp93qWQa8o9YHw==
+  dependencies:
     "@formily/shared" "2.0.18"
 
 "@formily/validator@2.0.9":
@@ -1393,9 +1462,10 @@
     classnames "^2.2.6"
     fs "^0.0.1-security"
     less-vars-to-js "^1.3.0"
+    react-copy-to-clipboard "^5.0.4"
     react-sortable-hoc "^1.11.0"
     react-sticky-box "^0.9.3"
-    xt-design "1.0.0-dev.ffea0ae8"
+    xt-design "1.0.0-dev.8052c8fb"
 
 "@gar/promisify@^1.0.1":
   version "1.1.3"
@@ -5520,7 +5590,7 @@ copy-text-to-clipboard@^2.2.0:
   resolved "https://registry.yarnpkg.com/copy-text-to-clipboard/-/copy-text-to-clipboard-2.2.0.tgz#329dd6daf8c42034c763ace567418401764579ae"
   integrity sha512-WRvoIdnTs1rgPMkgA2pUOa/M4Enh2uzCwdKsOMYNAJiz/4ZvEJgmbF4OmninPmlFdAWisfeh0tH+Cpf7ni3RqQ==
 
-copy-to-clipboard@^3.2.0:
+copy-to-clipboard@^3.2.0, copy-to-clipboard@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.3.1.tgz#115aa1a9998ffab6196f93076ad6da3b913662ae"
   integrity sha512-i13qo6kIHTTpCm8/Wup+0b1mVWETvu2kIMzKoK8FpkLkFxlt0znUAHcMzox+T8sPlqtZXq3CulEjQHsYiGFJUw==
@@ -14066,6 +14136,15 @@ rc-dropdown@^3.2.0, rc-dropdown@~3.4.0:
     rc-trigger "^5.0.4"
     rc-util "^5.17.0"
 
+rc-dropdown@~3.2.5:
+  version "3.2.5"
+  resolved "http://registry.xtrfr.cn/repository/npm/rc-dropdown/-/rc-dropdown-3.2.5.tgz#c211e571d29d15e7f725b5a75fc8c7f371fc3348"
+  integrity sha512-dVO2eulOSbEf+F4OyhCY5iGiMVhUYY/qeXxL7Ex2jDBt/xc89jU07mNoowV6aWxwVOc70pxEINff0oM2ogjluA==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.6"
+    rc-trigger "^5.0.4"
+
 rc-dropdown@~3.3.2:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/rc-dropdown/-/rc-dropdown-3.3.3.tgz#17ba32ebd066ae397b00e9e4d570c7c21daed88f"
@@ -14075,6 +14154,15 @@ rc-dropdown@~3.3.2:
     classnames "^2.2.6"
     rc-trigger "^5.0.4"
     rc-util "^5.17.0"
+
+rc-field-form@~1.22.0-2:
+  version "1.22.1"
+  resolved "http://registry.xtrfr.cn/repository/npm/rc-field-form/-/rc-field-form-1.22.1.tgz#0bd2f4e730ff2f071529d00bef28e062362890f5"
+  integrity sha512-LweU7nBeqmC5r3HDUjRprcOXXobHXp/TGIxD7ppBq5FX6Iptt3ibdpRVg4RSyNulBNGHOuknHlRcguuIpvVMVg==
+  dependencies:
+    "@babel/runtime" "^7.8.4"
+    async-validator "^4.0.2"
+    rc-util "^5.8.0"
 
 rc-field-form@~1.24.0:
   version "1.24.0"
@@ -14124,6 +14212,19 @@ rc-mentions@~1.6.1:
     rc-textarea "^0.3.0"
     rc-trigger "^5.0.4"
     rc-util "^5.0.1"
+
+rc-menu@~9.2.1:
+  version "9.2.1"
+  resolved "http://registry.xtrfr.cn/repository/npm/rc-menu/-/rc-menu-9.2.1.tgz#6fbe47f4846363bb81a5a21f0960026c3ada497a"
+  integrity sha512-UbEtn3rflJ8zS+etYGTVQuzy7Fm+yWXR5c0Rl6ecNTS/dPknRyWAyhJcbeR0Hu1+RdQT+0VCqrUPrgKnm4iY+w==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-motion "^2.4.3"
+    rc-overflow "^1.2.0"
+    rc-trigger "^5.1.2"
+    rc-util "^5.12.0"
+    shallowequal "^1.1.0"
 
 rc-menu@~9.3.2:
   version "9.3.2"
@@ -14187,6 +14288,20 @@ rc-pagination@~3.1.9:
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "^2.2.1"
+
+rc-picker@~2.5.17:
+  version "2.5.19"
+  resolved "http://registry.xtrfr.cn/repository/npm/rc-picker/-/rc-picker-2.5.19.tgz#73d07546fac3992f0bfabf2789654acada39e46f"
+  integrity sha512-u6myoCu/qiQ0vLbNzSzNrzTQhs7mldArCpPHrEI6OUiifs+IPXmbesqSm0zilJjfzrZJLgYeyyOMSznSlh0GKA==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.1"
+    date-fns "2.x"
+    dayjs "1.x"
+    moment "^2.24.0"
+    rc-trigger "^5.0.4"
+    rc-util "^5.4.0"
+    shallowequal "^1.1.0"
 
 rc-picker@~2.6.4:
   version "2.6.5"
@@ -14256,6 +14371,19 @@ rc-select@~14.0.0-alpha.15, rc-select@~14.0.0-alpha.23, rc-select@~14.0.0-alpha.
     rc-util "^5.16.1"
     rc-virtual-list "^3.2.0"
 
+rc-select@~14.0.2:
+  version "14.0.6"
+  resolved "http://registry.xtrfr.cn/repository/npm/rc-select/-/rc-select-14.0.6.tgz#93be0b185a9d66dc84795e079121f0f65310d8bf"
+  integrity sha512-HMb2BwfTvBxMmIWTR/afP4bcRJLbVKFSBW/VFfL5Z+kdV2XlrYdlliK2uHY7pRRvW16PPGwmOwGfV+eoulPINw==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-motion "^2.0.1"
+    rc-overflow "^1.0.0"
+    rc-trigger "^5.0.4"
+    rc-util "^5.16.1"
+    rc-virtual-list "^3.2.0"
+
 rc-slider@~10.0.0-alpha.4:
   version "10.0.0-alpha.6"
   resolved "https://registry.yarnpkg.com/rc-slider/-/rc-slider-10.0.0-alpha.6.tgz#d1f0098a2044a0063c912d049a1309e3357404d6"
@@ -14265,6 +14393,17 @@ rc-slider@~10.0.0-alpha.4:
     classnames "^2.2.5"
     rc-tooltip "^5.0.1"
     rc-util "^5.18.1"
+    shallowequal "^1.1.0"
+
+rc-slider@~9.7.4:
+  version "9.7.5"
+  resolved "http://registry.xtrfr.cn/repository/npm/rc-slider/-/rc-slider-9.7.5.tgz#193141c68e99b1dc3b746daeb6bf852946f5b7f4"
+  integrity sha512-LV/MWcXFjco1epPbdw1JlLXlTgmWpB9/Y/P2yinf8Pg3wElHxA9uajN21lJiWtZjf5SCUekfSP6QMJfDo4t1hg==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "^2.2.5"
+    rc-tooltip "^5.0.1"
+    rc-util "^5.16.1"
     shallowequal "^1.1.0"
 
 rc-steps@~4.1.0:
@@ -14448,6 +14587,14 @@ react-color@^2.19.3:
     prop-types "^15.5.10"
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
+
+react-copy-to-clipboard@^5.0.4:
+  version "5.1.0"
+  resolved "http://registry.xtrfr.cn/repository/npm/react-copy-to-clipboard/-/react-copy-to-clipboard-5.1.0.tgz#09aae5ec4c62750ccb2e6421a58725eabc41255c"
+  integrity sha512-k61RsNgAayIJNoy9yDsYzDe/yAZAzEbEgcz3DZMhF686LEyukcE1hzurxe85JandPUG+yTfGVFzuEw3xt8WP/A==
+  dependencies:
+    copy-to-clipboard "^3.3.1"
+    prop-types "^15.8.1"
 
 react-display-name@^0.2.4:
   version "0.2.5"
@@ -17960,21 +18107,15 @@ xmldom-sre@^0.1.31:
   resolved "https://registry.yarnpkg.com/xmldom-sre/-/xmldom-sre-0.1.31.tgz#10860d5bab2c603144597d04bf2c4980e98067f4"
   integrity sha512-f9s+fUkX04BxQf+7mMWAp5zk61pciie+fFLC9hX9UVvCeJQfNHRHXpeo5MPcR0EUf57PYLdt+ZO4f3Ipk2oZUw==
 
-xt-design@1.0.0-dev.5d4bac05:
-  version "1.0.0-dev.5d4bac05"
-  resolved "http://registry.xtrfr.cn/repository/npm/xt-design/-/xt-design-1.0.0-dev.5d4bac05.tgz#53441c4ecfb7d446075ae04e050616726960f4f1"
-  integrity sha512-0ufoai3T/Kp2Snp2fqjSypc9Iohgi3VxwVAoVh89/LVgslQ8VC3r2xlMf9U7oYQjH1WuKY4vkKBqIm0F/rrciw==
+xt-design@1.0.0-dev.8052c8fb:
+  version "1.0.0-dev.8052c8fb"
+  resolved "http://registry.xtrfr.cn/repository/npm/xt-design/-/xt-design-1.0.0-dev.8052c8fb.tgz#1cc4da5b0be2b39fcaded5bba61cf4df916b1ea5"
+  integrity sha512-FB+xQLVSF963TnWOdPKV9P4F54HyjJpNoaEoXmhWbqbWCc6SQTBMKBkXTWGNSne6MLfgzzIiXFEmwaDbrvjVyw==
   dependencies:
     antd "^4.17.2"
     classnames "^2.3.1"
-
-xt-design@1.0.0-dev.ffea0ae8:
-  version "1.0.0-dev.ffea0ae8"
-  resolved "http://registry.xtrfr.cn/repository/npm/xt-design/-/xt-design-1.0.0-dev.ffea0ae8.tgz#5f04ff305ad000310cf4b661e502b09f1f11aa53"
-  integrity sha512-/43554PnQNXCXZZrKTPkVse+Ywd3EZWtu5b5M4zbtZKzQEPpJAkdZ5r8R3Dv54O0vNMEeljR7rQ9G+Nc9lSIyw==
-  dependencies:
-    antd "^4.17.2"
-    classnames "^2.3.1"
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"
