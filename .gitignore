@@ -29,3 +29,4 @@ yalc.lock
 .yalc*
 preview.tsx.keep
 yarn-error.log
+yarn.lock
